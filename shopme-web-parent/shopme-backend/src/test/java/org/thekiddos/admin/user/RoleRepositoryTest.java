@@ -8,7 +8,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.thekiddos.shopmecommon.models.Role;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
@@ -28,7 +27,7 @@ class RoleRepositoryTest {
 
     @Test
     void createRole() {
-        Role admin = new Role("Admin", "abh");
+        Role admin = new Role( "Admin", "abh" );
         var savedAdmin = roleRepository.save( admin );
         assertThat( savedAdmin.getId() ).isGreaterThan( 0 );
         assertThat( savedAdmin.getName() ).isEqualTo( admin.getName() );
