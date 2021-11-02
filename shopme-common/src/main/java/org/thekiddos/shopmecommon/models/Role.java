@@ -33,6 +33,11 @@ public class Role {
         return Objects.hash( id );
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
     public Role( String name, String description ) {
         this.name = name;
         this.description = description;
